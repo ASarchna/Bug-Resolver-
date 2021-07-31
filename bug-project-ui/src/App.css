@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+    height:1000px;
+   }
+   .App{
+    color: #121612;
+    text-align: center;
+   }
+   .footer {
+    background-color: rgb(15, 19, 15);
+    border-top:2px solid rgb(12, 12, 12);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: rgb(90, 84, 84);
+    font-size: 25px;
+   }

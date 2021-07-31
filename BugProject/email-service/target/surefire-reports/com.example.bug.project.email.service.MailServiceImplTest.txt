@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.example.bug.project.email.service.MailServiceImplTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.132 s <<< FAILURE! - in com.example.bug.project.email.service.MailServiceImplTest
+testMailServiceImpl  Time elapsed: 0.132 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.example.bug.project.email.service.MailServiceImplTest.testMailServiceImpl(MailServiceImplTest.java:33)
+
