@@ -2,7 +2,6 @@ pipeline {
     agent any
     stages {
         stage('Compile Backend') {
-            
             steps {
                  script {
                     properties([pipelineTriggers([pollSCM('H/2 * * * *')])])
