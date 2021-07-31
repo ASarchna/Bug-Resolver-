@@ -1,0 +1,88 @@
+pipeline {
+    agent any
+   
+    triggers {
+        pollSCM('H/10 * * * *')
+    }
+    stages {
+        stage('Compile Backend') {
+            
+            steps {
+               dir('backend') {
+                echo "In Backend"
+                 bat "mvn compile"
+                
+                              }
+               
+            }
+
+            post {
+                
+                success {
+                   echo "Compiled "
+                }
+            }
+        }
+        stage('Build and Unit Testing in Backend') {
+            steps {
+               
+               dir('backend') {
+                echo "In Backend"
+                bat "mvn package"
+                
+                              }
+               
+               
+            }
+
+            post {
+                
+                success {
+                   echo "Build success "
+                }
+            }
+        }
+        stage('Build Frontend') {
+            steps {
+               
+               dir('frontend') {
+                echo "In Frontend"
+                bat "npm install react-scripts --save"
+                bat "npm build"
+                 
+                
+                              }
+               
+               
+            }
+
+            post {
+                
+                success {
+                   echo "Build success "
+                }
+            }
+        }
+         stage('Test Frontend') {
+            steps {
+               
+               dir('frontend') {
+                echo "In Frontend"
+                 bat "npm install react-scripts --save"
+                 bat "npm test"
+                
+                              }
+               
+               
+            }
+
+            post {
+                
+                success {
+                   echo "Test success "
+                }
+            }
+        }
+    }
+    
+}
