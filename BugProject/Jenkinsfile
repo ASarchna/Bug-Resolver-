@@ -6,6 +6,9 @@ pipeline {
         stage('Compile Backend') {
             
             steps {
+                 script {
+                    properties([pipelineTriggers([pollSCM('H/2 * * * *')])])
+                }
                dir('backend') {
                 echo "In Backend"
                  bat "mvn compile"
